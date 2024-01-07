@@ -48,14 +48,16 @@ public class Object_Interact : MonoBehaviour
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hit;
 
-                if (Physics.Raycast(ray, out hit))
+                ToggleExamination();
+
+            if (Physics.Raycast(ray, out hit))
                 {
                     if (hit.collider.CompareTag("Object"))
                     {
-                        ToggleExamination();
 
-                        // Store the currently examined object and its original position and rotation
-                        if (isExamining)
+                  
+                    // Store the currently examined object and its original position and rotation
+                    if (isExamining)
                         {
                         
                             examinedObject = hit.transform;
